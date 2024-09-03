@@ -16,8 +16,9 @@ const Wrapper = () => {
 
   return (
 
-    <div style={{ width: 240 }}>
-      <Sidenav defaultOpenKeys={['3', '4']}>
+    <div className='flex flex-row space-x-16 px-[30vw] py-20 justify-center h-[100vh] bg-[#F3FFE3]'>
+      <div className=''>
+      <Sidenav className='' defaultOpenKeys={['3', '4']}>
         <Sidenav.Body>
           <Nav activeKey="1">
             <Nav.Item eventKey="1" icon={<DashboardIcon />}>
@@ -52,6 +53,21 @@ const Wrapper = () => {
         </Sidenav.Body>
       </Sidenav>
     </div>
+
+    <div className='flex flex-col mt-10 justify-start items-center w-full space-y-10 bg-white rounded'>
+      <div className='flex flex-row  bg-[#B9D187] w-[40vw] items-center rounded-[10px] justify-around h-[5vh]'>
+        <a className=''> Home</a>
+        <a> Card generator</a>
+        <a> Text</a>
+      </div>
+      <div className='flex flex-col justify-center items-center w-3/4 space-y-10'>
+        <h1 className='text-3xl font-body'>Welcome to ecoBingo.com</h1>
+        <p className='text-xl font-body '>In a world where sustainability is key, EcoBingo is here to revolutionize your bingo
+           game experience. Say goodbye to paper waste and hello to    e-cards! Our app generates digital bingo cards, perfect for your next game night, all while supporting a greener planet. By choosing EcoBingo, you're not just enjoying a fun and interactive game, you're also making an eco-conscious choice that reduces your carbon footprint.
+        Join us in this drive to go green, one bingo game at a time. Let's play for the planet! 🌍💚</p>
+      </div>
+    </div>
+</div>
   );
 }
 

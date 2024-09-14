@@ -2,7 +2,7 @@ import React from 'react';
 
 function Occassions() {
   return (
-    <div className='reports'>
+    <div className='occassions'>
       <h1>Occassions</h1>
     </div>
   );

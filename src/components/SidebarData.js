@@ -18,7 +18,7 @@ export const SidebarData = [
   },
   {
     title: 'Occassions',
-    path: '/occasion',
+    path: '/occassions',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
   },

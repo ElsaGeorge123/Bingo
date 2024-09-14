@@ -8,8 +8,8 @@
 }
 
 .home,
-.reports,
-.products {
+.numbers,
+.occassions {
   display: flex;
   height: 90vh;
   align-items: center;

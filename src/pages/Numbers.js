@@ -2,7 +2,7 @@ import React from 'react';
 
 function Numbers() {
   return (
-    <div className='products'>
+    <div className='numbers'>
       <h1>Numbers</h1>
     </div>
   );

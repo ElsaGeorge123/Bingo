@@ -56,9 +56,9 @@ const Wrapper = () => {
 
     <div className='flex flex-col mt-10 justify-start items-center w-full space-y-10 bg-white rounded'>
       <div className='flex flex-row  bg-[#B9D187] w-[40vw] items-center rounded-[10px] justify-around h-[5vh]'>
-        <a className=''> Home</a>
-        <a> Card generator</a>
-        <a> Text</a>
+        <a className='cursor-pointer no-underline'> Home</a>
+        <a className='cursor-pointer no-underline'> Card generator</a>
+        <a className='cursor-pointer no-underline'> Text</a>
       </div>
       <div className='flex flex-col justify-center items-center w-3/4 space-y-10'>
         <h1 className='text-3xl font-body'>Welcome to ecoBingo.com</h1>

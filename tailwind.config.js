@@ -4,6 +4,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+<<<<<<< HEAD
     extend: {
       fontFamily: {
         body : ['Inter']
@@ -12,3 +13,10 @@ module.exports = {
   },
   plugins: [],
 }
+=======
+    extend: {},
+  },
+  plugins: [],
+}
+
+>>>>>>> 7c99fdd6c6560b15fa470045a126a681c77be011

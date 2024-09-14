@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+>>>>>>> 7c99fdd6c6560b15fa470045a126a681c77be011
 /*
 ! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
 */
@@ -437,7 +442,11 @@ video {
   display: none;
 }
 
+<<<<<<< HEAD
 *, ::before, ::after {
+=======
+*, ::before, ::after{
+>>>>>>> 7c99fdd6c6560b15fa470045a126a681c77be011
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -491,7 +500,11 @@ video {
   --tw-contain-style:  ;
 }
 
+<<<<<<< HEAD
 ::backdrop {
+=======
+::backdrop{
+>>>>>>> 7c99fdd6c6560b15fa470045a126a681c77be011
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -543,4 +556,89 @@ video {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
+<<<<<<< HEAD
+=======
+}
+
+.mt-10{
+  margin-top: 2.5rem;
+}
+
+.flex{
+  display: flex;
+}
+
+.h-\[5vh\]{
+  height: 5vh;
+}
+
+.w-3\/4{
+  width: 75%;
+}
+
+.w-\[40vw\]{
+  width: 40vw;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-start{
+  justify-content: flex-start;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-around{
+  justify-content: space-around;
+}
+
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.rounded{
+  border-radius: 0.25rem;
+}
+
+.rounded-\[10px\]{
+  border-radius: 10px;
+}
+
+.bg-\[\#B9D187\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 209 135 / var(--tw-bg-opacity));
+}
+
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+>>>>>>> 7c99fdd6c6560b15fa470045a126a681c77be011
 }

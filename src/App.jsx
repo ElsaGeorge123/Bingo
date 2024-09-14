@@ -1,20 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import GlobalContext from './Context/GlobalContext';
-import { useContextData } from './Context/useContextData';
-import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
-import GroupIcon from '@rsuite/icons/legacy/Group';
-import MagicIcon from '@rsuite/icons/legacy/Magic';
-import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
-import { Container, Header, Content, Footer, Navbar, Sidenav, Nav } from 'rsuite';
-import { FaCog } from "react-icons/fa";
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Occassions from './pages/Occassions';
+import Numbers from './pages/Numbers';
 
-
-
-const Wrapper = () => {
-
+function App() {
   return (
+<<<<<<< HEAD
 
     <div className='flex flex-row space-x-16 px-[30vw] py-20 justify-center h-[100vh] bg-[#F3FFE3]'>
       <div className=''>
@@ -68,15 +62,20 @@ const Wrapper = () => {
       </div>
     </div>
 </div>
+=======
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exact element={<Home/>} />
+          <Route path='/numbers' element={<Numbers/>} />
+          <Route path='/occassions' element={<Occassions/>} />
+          
+        </Routes>
+      </Router>
+    </>
+>>>>>>> 7c99fdd6c6560b15fa470045a126a681c77be011
   );
 }
 
-const App = () => {
-  const context = useContextData();
-  return (
-    <GlobalContext.Provider value={context}>
-      <Wrapper />
-    </GlobalContext.Provider>
-  );
-}
 export default App;

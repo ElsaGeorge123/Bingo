@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Occassions from './pages/Occassions';
 import Numbers from './pages/Numbers';
 import CustomizeCard from './pages/CustomizeCard';
-
+import BingoGen from './components/BingoGen';
 function App() {
   return (
     <>
@@ -17,6 +17,7 @@ function App() {
           <Route path='/numbers' element={<Numbers/>} />
           <Route path='/occassions' element={<Occassions/>} />
           <Route path='/CustomizeCard' element={<CustomizeCard/>} />      
+          <Route path='/bingogen' element={<BingoGen/>} />      
         </Routes>
       </Router>
     </>

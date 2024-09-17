@@ -11,7 +11,7 @@ function Occassions() {
     {
       event: 'Christmas',
       img: christmas,
-      link: "/CustomizeCard",
+      link: "/bingogen",
     },
     {
       event: 'Easter',

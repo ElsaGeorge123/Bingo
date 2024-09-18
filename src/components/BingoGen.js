@@ -3,7 +3,7 @@ import BingoCard from "./BingoCard";
 import * as htmlToImage from "html-to-image";
 import download from "downloadjs";
 
-const BingoGen = () => {
+const BingoGen = ({occassion}) => {
   const [numCards, setNumCards] = useState(1);
   const [cards, setCards] = useState([]);
 
@@ -49,7 +49,7 @@ const BingoGen = () => {
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold text-center mb-6">
-        Bingo Card Generator
+       {occassion} Bingo Card Generator
       </h1>
 
       <div className="flex justify-center items-center mb-4">

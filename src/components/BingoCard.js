@@ -1,6 +1,10 @@
 import React from "react";
 
-const BingoCard = ({ card, cardId }) => {
+const BingoCard = ({ card, cardId, occassion }) => {
+
+  const head = "p-4 bg-red-600 text-white text-xl font-bold";
+  const tablePrimary= "bg-red-600 text-white"
+  const tableSecondary= "bg-white text-green-700"
   return (
     <div
       id={cardId}
@@ -12,7 +16,7 @@ const BingoCard = ({ card, cardId }) => {
             {['B', 'I', 'N', 'G', 'O'].map((letter, index) => (
               <th
                 key={index}
-                className="p-4 bg-red-600 text-white text-xl font-bold"
+                className={head}
               >
                 {letter}
               </th>
@@ -27,8 +31,8 @@ const BingoCard = ({ card, cardId }) => {
                   key={colIndex}
                   className={`border p-6 text-center text-lg font-semibold  ${
                     rowIndex === 2 && colIndex === 2
-                      ? "bg-red-600 text-white" // Apply red background and white text to the FREE cell
-                      : "bg-white text-green-700"
+                      ? tablePrimary// Apply red background and white text to the FREE cell
+                      : tableSecondary
                   }`}
                 >
                   {rowIndex === 2 && colIndex === 2 ? (

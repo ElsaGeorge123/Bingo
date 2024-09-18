@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { christmas, easter, halloween } from '../utils/images';
 import { Link } from "react-router-dom";
+import GlobalContext from '../GlobalContext';
 
 
 function Occassions() {
+  const {
+    setoccassion,
+    occassion,
+  } = useContext(GlobalContext);
   const data = [
     {
       event: 'Christmas',
@@ -16,18 +21,18 @@ function Occassions() {
     {
       event: 'Easter',
       img: easter,
-      link: "/CustomizeCard",
+      link: "/bingogen",
     },
     {
       event: 'Halloween',
       img: halloween,
-      link: "/CustomizeCard",
+      link: "/bingogen",
     },
     {
       event: 'Baby Shower',
-      img: '',
+      img: halloween,
       link: "/CustomizeCard",
-    }
+    },
   ]
   const settings = {
     dots: true,
@@ -50,8 +55,7 @@ function Occassions() {
                 <div className='flex flex-col items-center justify-center gap-4'>
                   <p className='text-xl font-semibold'>{d.event}</p>
                   <Link to={d.link} className="user-menu-link">
-
-                    <button className="bg-indigo-500 text-white text-lg px-6 py-1 rounded-xl" >Customise Bingo</button>
+                    <button className="bg-indigo-500 text-white text-lg px-6 py-1 rounded-xl" onClick={setoccassion(d.event)}>Customise Bingo</button>
                   </Link>
 
                 </div>

@@ -6,7 +6,7 @@ import { Modal } from "rsuite";
 import GlobalContext from "../Context/GlobalContext";
 
 const BingoGen = ({ occassion }) => {
-  const { isOpen, setIsOpen } = useContext(GlobalContext);
+  // const { isOpen, setIsOpen } = useContext(GlobalContext);
   const [numCards, setNumCards] = useState(1);
   const [cards, setCards] = useState([]);
 
@@ -48,11 +48,10 @@ const BingoGen = ({ occassion }) => {
         });
     });
   };
-
+  const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
     setIsOpen(!isOpen);
-    exportCards()
-  };
+};
 
   return (
     <div className="container mx-auto py-8">
@@ -79,12 +78,13 @@ const BingoGen = ({ occassion }) => {
           Generate Cards
         </button>
         <button
-          onClick={toggleModal}
+          onClick={exportCards}
           className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
         >
           Export as Images
         </button>
-        <Modal isOpen={true} onClose={toggleModal}>
+        <button onClick={toggleModal}>Open Popup</button>
+        <Modal isOpen={isOpen} onClose={toggleModal}>
           <h2>This is a Popup!</h2>
           <p>You can put any content here.</p>
           <button onClick={toggleModal}>Close</button>

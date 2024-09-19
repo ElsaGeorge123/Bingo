@@ -2,11 +2,11 @@ import React, { useState, useContext } from "react";
 import BingoCard from "./BingoCard";
 import * as htmlToImage from "html-to-image";
 import download from "downloadjs";
-import { Modal } from "rsuite";
+import Modal from '../pages/Modal';
 import GlobalContext from "../Context/GlobalContext";
 
 const BingoGen = ({ occassion }) => {
-  // const { isOpen, setIsOpen } = useContext(GlobalContext);
+  const { isOpen, setIsOpen } = useContext(GlobalContext);
   const [numCards, setNumCards] = useState(1);
   const [cards, setCards] = useState([]);
 
@@ -34,7 +34,6 @@ const BingoGen = ({ occassion }) => {
     return card;
   };
 
-  // Function to export cards as images
   const exportCards = () => {
     cards.forEach((card, index) => {
       const node = document.getElementById(`bingo-card-${index}`);
@@ -48,10 +47,9 @@ const BingoGen = ({ occassion }) => {
         });
     });
   };
-  const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
     setIsOpen(!isOpen);
-};
+  };
 
   return (
     <div className="container mx-auto py-8">
@@ -78,7 +76,7 @@ const BingoGen = ({ occassion }) => {
           Generate Cards
         </button>
         <button
-          onClick={exportCards}
+          onClick={toggleModal}
           className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
         >
           Export as Images
@@ -87,6 +85,7 @@ const BingoGen = ({ occassion }) => {
         <Modal isOpen={isOpen} onClose={toggleModal}>
           <h2>This is a Popup!</h2>
           <p>You can put any content here.</p>
+          <button onClick={exportCards}>Download</button>
           <button onClick={toggleModal}>Close</button>
         </Modal>
       </div>

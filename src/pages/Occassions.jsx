@@ -1,69 +1,56 @@
-import React, { useContext } from 'react';
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import { christmas, easter, halloween } from '../utils/images';
+import React, { useContext } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { christmas, easter, halloween } from "../utils/images";
 import { Link } from "react-router-dom";
-import GlobalContext from '../GlobalContext';
-
+import GlobalContext from "../Context/GlobalContext";
+import OccassionCard from "../components/OccassionCard";
 
 function Occassions() {
-  const {
-    setoccassion,
-    occassion,
-  } = useContext(GlobalContext);
+  const { setoccassion, occassion } = useContext(GlobalContext);
   const data = [
     {
-      event: 'Christmas',
+      event: "Christmas",
       img: christmas,
       link: "/bingogen",
     },
     {
-      event: 'Easter',
+      event: "Easter",
       img: easter,
       link: "/bingogen",
     },
     {
-      event: 'Halloween',
+      event: "Halloween",
       img: halloween,
       link: "/bingogen",
     },
     {
-      event: 'Baby Shower',
+      event: "Baby Shower",
       img: halloween,
       link: "/CustomizeCard",
     },
-  ]
+  ];
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-  }
+  };
 
   return (
     <>
-      <div className='w-3/4 m-auto'>
-        <div className='mt-20 bg-black'>
-          <Slider {...settings}>
-            {data.map((d) => (
-              <div className="bg-white h-[450px] text-black rounded-xl">
-                <div style={{ backgroundImage: `url(${d.img})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPositionX: 'center' }} className='h-80 rounded-t-xl bg-white flex justify-center items-center'>
+      <div></div>
+      <div className="w-3/4 m-auto p-10 ">
+        <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+          {data.map((item) => {
 
-                </div>
-                <div className='flex flex-col items-center justify-center gap-4'>
-                  <p className='text-xl font-semibold'>{d.event}</p>
-                  <Link to={d.link} className="user-menu-link">
-                    <button className="bg-indigo-500 text-white text-lg px-6 py-1 rounded-xl" onClick={()=>{setoccassion(d.event)}}>Customise Bingo</button>
-                  </Link>
-
-                </div>
-              </div>
-            ))}
-          </Slider>
+            return <div className="mt-4">
+              <OccassionCard item={item} />
+            </div>
+          })}
         </div>
-
       </div>
     </>
   );

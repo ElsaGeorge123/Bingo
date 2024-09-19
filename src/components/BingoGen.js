@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import BingoCard from "./BingoCard";
 import * as htmlToImage from "html-to-image";
 import download from "downloadjs";
+import { Modal } from "rsuite";
+import GlobalContext from "../Context/GlobalContext";
 
-const BingoGen = ({occassion}) => {
+const BingoGen = ({ occassion }) => {
+  const { isOpen, setIsOpen } = useContext(GlobalContext);
   const [numCards, setNumCards] = useState(1);
   const [cards, setCards] = useState([]);
 
@@ -46,10 +49,15 @@ const BingoGen = ({occassion}) => {
     });
   };
 
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+    exportCards()
+  };
+
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold text-center mb-6">
-       {occassion} Bingo Card Generator
+        {occassion} Bingo Card Generator
       </h1>
 
       <div className="flex justify-center items-center mb-4">
@@ -71,18 +79,23 @@ const BingoGen = ({occassion}) => {
           Generate Cards
         </button>
         <button
-          onClick={exportCards}
+          onClick={toggleModal}
           className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
         >
           Export as Images
         </button>
+        <Modal isOpen={true} onClose={toggleModal}>
+          <h2>This is a Popup!</h2>
+          <p>You can put any content here.</p>
+          <button onClick={toggleModal}>Close</button>
+        </Modal>
       </div>
 
       <div className="flex flex-wrap justify-center gap-6">
-          <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {cards.map((card, index) => (
-          <BingoCard key={index} card={card} cardId={`bingo-card-${index}`} />
-        ))}
+        <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {cards.map((card, index) => (
+            <BingoCard key={index} card={card} cardId={`bingo-card-${index}`} />
+          ))}
         </div>
       </div>
     </div>

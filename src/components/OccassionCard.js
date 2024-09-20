@@ -7,7 +7,6 @@ const OccassionCard = ({ item }) => {
   function handleChange() {
     navigate(item.link);
     setoccassion(item.event);
-    localStorage.setItem('occassion' , item.event)
 }
 
   const navigate = useNavigate();

@@ -1,14 +1,10 @@
 import React, { useContext } from "react";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { christmas, easter, halloween } from "../utils/images";
-import { Link } from "react-router-dom";
-import GlobalContext from "../Context/GlobalContext";
-import OccassionCard from "../components/OccassionCard";
+import OccassionCard from "./OccassionCard";
 
 function Occassions() {
-  const { setoccassion, occassion } = useContext(GlobalContext);
   const data = [
     {
       event: "Christmas",

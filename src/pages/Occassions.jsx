@@ -41,7 +41,6 @@ function Occassions() {
       <div className="w-3/4 m-auto p-10 ">
         <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
           {data.map((item) => {
-
             return <div className="mt-4">
               <OccassionCard item={item} />
             </div>

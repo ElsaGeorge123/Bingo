@@ -11,7 +11,7 @@ function VirtualBingoPage() {
 
   const createSession = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/create-session');
+      const response = await axios.post('http://localhost:3004/create-session');
       setSessionId(response.data.sessionId);
       setQrVisible(true);
       setMessage('Session created! Share this QR code.');
@@ -22,7 +22,7 @@ function VirtualBingoPage() {
 
   const joinSession = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/join-session', {
+      const response = await axios.post('http://localhost:3004/join-session', {
         sessionId,
         username,
       });

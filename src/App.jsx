@@ -9,6 +9,7 @@ import CustomizeCard from "./pages/CustomizeCard";
 import BingoGen from "./components/BingoGen";
 import GlobalContext from "./Context/GlobalContext";
 import { useContextData } from "./Context/useContext";
+import SessionManager from "./components/VirtualBingo/SessionManager";
 
 const Wrapper = () => {
   const { occassion } = useContext(GlobalContext);
@@ -22,6 +23,7 @@ const Wrapper = () => {
           <Route path="/numbers" element={<Numbers />} />
           <Route path="/occassions" element={<Occassions />} />
           <Route path="/CustomizeCard" element={<CustomizeCard />} />
+          <Route path="/VirtualBingo" element={<SessionManager />} />
           <Route
             path="/bingogen"
             element={<BingoGen occassion={occassion} />}

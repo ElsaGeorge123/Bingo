@@ -85,7 +85,7 @@ const BingoGen = ({ occassion }) => {
         <Modal isOpen={isOpen} onClose={toggleModal}>
           <h2>This is a Popup!</h2>
           <p>You can put any content here.</p>
-          <button onClick={exportCards}>Download</button>
+          <button className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600" onClick={exportCards}>Download</button>
           <button onClick={toggleModal}>Close</button>
         </Modal>
       </div>

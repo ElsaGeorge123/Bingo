@@ -1,11 +1,19 @@
 // src/App.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
+
 
 function App() {
     const [sessionId, setSessionId] = useState('');
     const [username, setUsername] = useState('');
     const [message, setMessage] = useState('');
+
+    function handleChange() {
+      navigate('/createsession');
+    }
+
+    const navigate = useNavigate();
 
     const startSession = async () => {
         try {
@@ -32,7 +40,7 @@ function App() {
     return (
         <div style={{ textAlign: 'center', padding: '50px' }}>
             <h1>Start or Join a Session</h1>
-            <button onClick={startSession}>Start Session</button>
+            <button onClick={handleChange}>Start Session</button>
             <div>
                 <h2>Join a Session</h2>
                 <input

@@ -12,12 +12,14 @@ app.use(bodyParser.json());
 
 let sessions = {};
 
-app.post('/create-session', (req, res) => {
-    const sessionId = uuidv4();
+// Endpoint to create a new session
+app.post('/start-session', (req, res) => {
+    const sessionId = uuidv4().slice(0, 8); // Shorten UUID for easier sharing
     sessions[sessionId] = { users: [] }; // You can store additional session data here
     res.json({ sessionId });
 });
 
+// Endpoint to join a session
 app.post('/join-session', (req, res) => {
     const { sessionId, username } = req.body;
     if (sessions[sessionId]) {
@@ -25,6 +27,16 @@ app.post('/join-session', (req, res) => {
         res.json({ message: 'Joined successfully!', session: sessions[sessionId] });
     } else {
         res.status(404).json({ message: 'Session not found!' });
+    }
+});
+
+// Endpoint to get session details
+app.get('/sessions/:sessionId', (req, res) => {
+    const { sessionId } = req.params;
+    if (sessions[sessionId]) {
+        res.json(sessions[sessionId]);
+    } else {
+        res.status(404).json({ message: 'Session not found' });
     }
 });
 
